@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <div id="Checkout" class="inline">
+      <h1>Payment here</h1>
+      <br>
+   
+    <form>
+      <div class="form-group">
+        <label for="PaymentAmount">Payment amount</label>
+        
+        <div class="amount-placeholder">
+            <span>₹.</span>
+            <span>{{amount}}</span>
+        </div>
+        <span class="cardImg">
+              <img src="images/visa.png" style="height: 40px;">
+              <img src="images/mstr.png" style="height: 37px;">
+              <img src="images/payp.png" style="height: 60px;">
+              <img src="images/amrr.png" style="height: 40px;">
+        </span>
+      </div>
+  
+  <div>
+      <div class="form-group" name="myform">
+        <label for="NameOfCustomer">Name.</label>
+        <input  id="NameOfCustomer" name="fname" onblur="nullname()" class="form-control" type="text" maxlength="255"></input> <span id="errfn"></span>
+      </div>
+      
+      <div class="form-group">
+        <label for="EmailOfCustomer">Email ID.</label>
+        <input  id="IdOfCustomer" class="form-control" type="email" name="bday" maxlength="255"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="NoOfCustomer">Mobile no.</label>
+        <input  id="NumberOfCustomer" class="form-control" type="number" maxlength="255"></input>
+      </div>
+          
+      <div class="form-group">
+        <label for="NameOnCard">Card holder name.</label>
+        <input id="NameOnCard" class="form-control" type="text" maxlength="255"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="CreditCardNumber">Card number.</label>
+        <input id="CreditCardNumber" class="null card-image form-control" type="text"></input>
+      </div>
+
+      <div class="expiry-date-group form-group">
+        <label for="ExpiryDate">Expiry date.</label>
+        <input id="ExpiryDate" class="form-control" type="text" placeholder="MM / YY" maxlength="7"></input>
+      </div>
+
+      <div class="zip-code-group form-group">
+        <label for="ZIPCode">ZIP/Postal code.</label>
+        <div class="input-container">
+            <input id="ZIPCode" class="form-control" type="text" maxlength="10"></input>
+            <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address.">
+              <i class="fa fa-question-circle"></i></a>
+        </div>
+      </div>
+      
+
+    <button id="PayButton" ng-click="addbooking1()" class="btn btn-block btn-success submit-button"  type="submit">
+        <span class="align-middle">Pay ₹.{{amount}}</span>
+      </button>
+
+  </div>
+</form>
+</div>
+<br>
+<br>
+<br>
+</div>
+
+
+    <div class="ppp">
+      <div class="col-md-6">
+        <div class="g">
+        <h1>Your Seat Details</h1>
+        <div class="t">
+          <div class="SeatC">Movie name&nbsp;&nbsp;&nbsp;&nbsp;:-
+            <span Id="coun2">{{movie}}</span>
+          </div>
+          
+          <div class="SeatC">Theater city &nbsp;&nbsp;&nbsp;&nbsp;:-
+            <span Id="coun2">{{city}}</span>
+          </div>
+          <div class="SeatC">Theater name &nbsp;:-
+            <span Id="coun2">{{tname}}</span>
+          </div>
+
+          <div class="SeatC">Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :-
+            <span Id="coun2">{{date}}</span>
+          </div>
+          
+          <div class="SeatC">Time &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :-
+            <span Id="coun2">{{time}}</span>
+          </div>
+          
+          <div class="SeatC">Selected seats &nbsp;:-
+            <span Id="coun2"> {{seatNo}}</span>
+          </div>
+          
+          <div class="SeatC">Total Seats &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :-
+            <span Id="coun">{{count121}}</span>
+          </div>
+          
+          <div class="SeatC" id="SeatC2"> Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :-
+            <span Id="coun1">{{amount}} </span>
+          </div><br>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>

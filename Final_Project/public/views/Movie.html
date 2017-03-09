@@ -1,0 +1,70 @@
+<div class="container">
+<div>
+<form name="myForm">
+<h1>Add Movies</h1>
+
+<p>Movie Name</p>
+<input type="text" ng-model="Title" name="fname"  placeholder="Movie Name"/>
+<br><br>
+
+<p>Year</p>
+<input class="year" ng-model="Year" name="fname" type="number" placeholder="YYYY" />
+<br><br>
+
+<button type="button" ng-click="searchMovie()" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search movie</button>
+</form>
+
+</div>
+
+<br><br>
+<h1>Add Movies</h1>
+<table class="table table-hover">
+ <thead>
+   <tr>
+     <th>Title</th>
+     <th>Year</th>
+      <th>Runtime</th>
+      <th>Director</th>
+      <th>Language</th>
+      <th>Poster</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr>
+     <td>{{movieData.data.Title}}</td>
+     <td>{{movieData.data.Year}}</td>
+     <td>{{movieData.data.Runtime}}</td>
+     <td>{{movieData.data.Director}}</td>
+     <td>{{movieData.data.Language}}</td>
+     <td><img src={{movieData.data.Poster}} alt="" style="height:100px; width:100px;"></td>
+     <td><button type="button" ng-click="addmovie()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Movie</button></td>
+   </tr>
+ </tbody>
+</table>
+
+<h1>Show Movies</h1>
+<table class="table table-hover">
+
+ <thead>
+   <tr>
+     <th>Title</th>
+     <th>Year</th>
+      <th>Runtime</th>
+      <th>Director</th>
+      <th>Poster</th>
+      <th>Language</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr ng-repeat="oa in movieDataa">
+   <td>{{oa.Title}}</td>
+   <td>{{oa.Year}}</td>
+   <td>{{oa.Runtime}}</td>
+   <td>{{oa.Director}}</td>
+    <td><img src={{oa.Poster}} alt="" style="height:100px; width:100px;"></td>
+    <td>{{oa.Language}}</td>
+    <td><button type="button" ng-click="deletemovie(oa)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Delete</td>
+</tr>
+ </tbody>
+</table>
+</div>

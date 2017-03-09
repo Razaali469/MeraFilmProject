@@ -1,0 +1,44 @@
+<div class="container">
+<form>
+<h1>Add Theaters</h1>
+
+<p>Theater Name</p>
+<input type="text" ng-model="ob.theatername"  placeholder="Theater Name"/>
+<br><br>
+
+<p>City</p>
+<input class="city" ng-model="ob.theatercity" type="text" placeholder="Cityname" />
+<br><br>
+
+<button type="button" ng-click="addtheater(ob)" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add Theater</button>
+</form>
+<br><br>
+
+<h1>Show Theaters</h1>
+<table class="table table-hover">
+
+ <thead>
+   <tr>
+     <th>Theaters Name</th>
+     <th>City Name</th>
+      <th></th>
+   </tr>
+ </thead>
+
+ <div>
+ <h3>Select City</h3>
+
+ <p><input type="text" ng-model="theatercity"></p>
+ </div>
+
+
+ <tbody>
+   <tr ng-repeat="t in theaterData | filter:theatercity">
+     <td>{{t.theatername}}</td>
+     <td>{{t.theatercity}}</td>
+
+    <td ><button type="button" ng-click="deletetheater(t)" class="btn btn-danger" class="glyphicon glyphicon-remove-circle"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+    </tr>
+ </tbody>
+</table>
+</div>

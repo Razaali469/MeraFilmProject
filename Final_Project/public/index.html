@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyMovie">
+<head>
+	<meta charset="UTF-8">
+	<title>My Movie</title>
+	<link rel="shortcut icon" type="image/png" href="images\w.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="/build/bundle.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="js/angular-filter.min.js"></script>
+	<script src="js/jquery-3.1.0.min.js"></script>
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="css/custom.css">
+	
+	<script>
+	      window.onload = function() {
+	          document.getElementById("dpAdmin").onmouseover = function()
+	          {
+	              this.style.backgroundColor = "#4d0000";
+	          }
+
+	          document.getElementById("dpAdmin").onmouseout = function()
+	          {
+	              this.style.backgroundColor = "#640000";
+	          }
+	      }
+	</script>
+</head>
+<body>
+		<nav id="navbar" class="navbar navbar-fixed-top" style="background-color: #640000;">
+			<div class="container">
+			<div class="navbar-header">
+				<a href="/#/home">
+					<img src="images/33.png" height="35px;" width="120px;" style="margin-top:10px;">
+				</a>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+
+			<li>
+			<a href="/#/login" id="dpAdmin2" style="display: block;" class=" btn btn-primary"><span class="glyphicon glyphicon-user"></span> Login</a>
+			</li>
+			<!-- <li>
+			<a href="/#/register">Register</a>
+			</li> -->
+
+				<li ng-controller="LoginController" class="dropdown"><a id="dpAdmin" class="dropdown-toggle" data-toggle="dropdown" href="/#/home" style=" display:none; color:white; font-weight: bold;"><span class="glyphicon glyphicon-user"></span> Admin<span class="caret"></span>&nbsp;&nbsp;</a>
+					<ul class="dropdown-menu">
+						<li><a href="/#/Theater"><span>Add Theater</span></a></li>
+						<li><a href="/#/Movie"><span>Add Movies</span></a></li>
+						<li><a href="/#/TMMaping"><span>TM Maping</span></a></li>
+						<li class="divider" ></li>
+					<li><div style="width: 100%; display: none;" id="dpAdmin1" ng-controller="LogoutController">
+					<a style="height: 35px;width: 100%; border-radius: 0px;" ng-click='logout()' class="btn btn-danger">Logout</a></div></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+<br><br><br>
+
+	<div ng-view>
+
+	</div>
+	<br>
+
+	<div>
+	  <footer class="footer">
+		<div class="container">
+		    <p class="ftext">Copyright 2017 © Mera Film.com Pvt. Ltd.</p>
+		</div>
+	  </footer>
+	</div>
+</body>
+</html>

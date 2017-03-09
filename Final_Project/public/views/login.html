@@ -1,0 +1,35 @@
+<div class="container">
+<br>
+<h1 style="line-height: 50px;">Login</h1>
+    <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+
+<div style="line-height: 12px; font-size: 17px;">
+    <p>The requested resource requires authentication. Please login to</p>
+    <p>continue.</p>
+</div>
+<br>
+<div style="margin-left: 400px;">
+<form class="form" ng-submit="login()">
+    <div class="form-group">
+        <img id="login_img" src="images/login_img.png" alt="Login"><br><br>
+        <label><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" ng-model="loginForm.username" name="username" required>
+        <br><br>
+        <label><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" ng-model="loginForm.password" name="password" required>
+        <br>
+        <br>
+        <div style="margin-left: 75px;">
+        <button id="login_pge_btn" type="submit" ng-disabled="disabled">Login</button>
+        <button id="register_pge_btn" style="margin-left: 18px;" ng-disabled="disabled" type="submit">
+        <a href="#/register">Register here</a></button>
+    </div>
+</form>
+
+    </div>
+</div>
+
+</div>
+
+
+

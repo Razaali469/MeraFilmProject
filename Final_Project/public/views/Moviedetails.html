@@ -1,0 +1,72 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 style="text-align: center; font-weight: 700;">Select Theater and city for "{{movie}}"</h1>
+		</div>
+	</div><br><br>
+
+	
+	<div class="row">
+		<div class="col-md-4">
+			<img src={{poster}} height="350px;" width="300px;">
+		</div>
+		<div class="col-md-8">
+			<form>
+				<table  class="table table-hover">
+					<thead>
+					   <tr>
+					     <th>Title</th>
+					     <th>Director</th>
+					      <th>Runtime</th>
+					   </tr>
+					</thead>
+
+					<tbody>
+					   <tr>
+					     <td>{{movie}}</td>
+					     <td>{{director}}</td>
+					     <td>{{runtime}}</td>
+					   </tr>
+					 </tbody>
+				</table>
+			</form>
+			<br><br>
+			<form>
+			<table class="table">
+				<tr>
+					<td style="font-weight: 900;">Theater City:</td>
+					<td>
+						<select ng-model="mappingdata.theatercity" style="width:160px; margin-left: 50px;">
+							<option ng-repeat="c in mappingdata | unique : 'theatercity'">{{c.theatercity}}</option>
+						</select>
+					</td>
+					</tr>
+					<tr>
+						<td style="font-weight: 900;">Date:</td>
+						<td>
+							<select ng-model="mydate" style="width:160px; margin-left: 50px;">
+								<option ng-repeat="c in movdates">{{c| date:'yyyy-MM-dd'}}</option>
+							</select>
+						</td>						
+					</tr>
+			</table>
+			<br><br>
+			<table class="table table-hover">
+			<thead>
+				<tr>
+				<th>Theater Name</th>
+				<th>Time</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-show="mydate" ng-repeat="d in mappingdata |filter:mydate|filter:mappingdata.theatercity|filter:movie">
+					<td>{{d.theatername}}</td>
+				<td><a href="" ng-click="page(d.theatercity,d.Date,d.Time,d.theatername)">{{d.Time}}</a></td>
+				</tr>
+			</tbody>
+			</table>
+			</form>
+		</div>			
+	</div>
+</div>
+<br><br><br>

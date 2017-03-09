@@ -1,0 +1,114 @@
+<div class="container">
+<h1>Schedule Movie</h1>
+<div class="row">
+<div class="col-md-4">
+<form>
+<table class="table">
+<thead>
+	<tr>
+		<td>Select Date:</td>
+		<td><input type="date" name="bday" ng-model="mapping.Date" id="datepicker" style="margin-left: 70px;"  ></td>
+	</tr>
+	<tr>
+		<td>Movie name:</td>
+		<td>
+		<select ng-model="mapping.Title" style="width:160px; margin-left: 70px;">
+			<option ng-repeat="l in moviedetails">{{l.Title}}</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>City:</td>
+		<td>
+		<select ng-model="mapping.theatercity" style="width:160px; margin-left: 70px;">
+			<option ng-repeat="c in theaterdetails">{{c.theatercity}}</option>
+		</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Theater name:</td>
+		<td>
+		<select ng-model="mapping.theatername" style="width:160px; margin-left: 70px;">
+			<option ng-show="mapping.theatercity"  ng-repeat="t in theaterdetails |filter:mapping.theatercity">{{t.theatername}}</option>
+		</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Director:</td>
+		<td>
+		<select ng-model="mapping.Director" style="width:160px; margin-left: 70px;">
+			<option ng-show="mapping.Title" ng-repeat="d in moviedetails |filter:mapping.Title">{{d.Director}}</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Runtime:</td>
+		<td>
+		<select ng-model="mapping.Runtime" style="width:160px; margin-left: 70px;">
+			<option ng-show="mapping.Title" ng-repeat="h in moviedetails |filter:mapping.Title">{{h.Runtime}}</option>
+		</select>
+		</td>
+	</tr>
+
+	<tr>
+		<td>Poster:</td>
+		<td>
+		<select ng-model="mapping.Poster" style="width:160px; margin-left: 70px;">
+			<option ng-show="mapping.Title" ng-repeat="m in moviedetails |filter:mapping.Title">{{m.Poster}}</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Time:</td>
+		<td>
+		<select ng-model="mapping.Time" style="width:160px; margin-left: 70px;">
+			<option value=""></option>
+			<option value="09:00AM">09:00AM</option>
+			<option value="10:00AM">10:00AM</option>
+			<option value="11:00AM">11:00AM</option>
+			<option value="12:00PM">12:00PM</option>
+			<option value="01:00PM">01:00PM</option>
+		</select>
+		</td>
+	</tr>
+</thead>
+</table>
+<button style="margin-left: 150px;" ng-click="addmapping()" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add</button>
+</form>
+</div>
+</div>
+
+<h1>Show Movies</h1>
+<table class="table table-hover">
+
+ <thead>
+   <tr>
+     <th>Date</th>
+     <th>Movie Name</th>
+      <th>Theater Name</th>
+      <th>City</th>
+      <th>Director Name</th>
+      <th>Runtime</th>
+      <th>Poster</th>
+      <th>Time</th>
+   </tr>
+ </thead>
+
+ <tbody>
+   <tr ng-repeat="o in mappingdata">
+	   <td>{{o.Date}}</td>
+	   <td>{{o.Title}}</td>
+	   <td>{{o.theatername}}</td>
+	   <td>{{o.theatercity}}</td>
+	   <td>{{o.Director}}</td>
+	   <td>{{o.Runtime}}</td>
+	   <td><img  src={{o.Poster}} width="100px;" height="100px;">  </td>
+	   <td>{{o.Time}}</td>
+	   <td><button type="button" ng-click="deletemapping(o)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Delete</td>
+   </tr>
+   
+</tbody>
+</table>
+</div>

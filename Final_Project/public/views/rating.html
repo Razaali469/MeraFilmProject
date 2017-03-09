@@ -1,0 +1,82 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 style="text-align: center; font-weight: 700;">Rate Here For Movie :: {{movie}}</h1>
+		</div>
+	</div><br><br>
+
+	
+	<div class="row">
+		
+		<div class="col-md-4">
+		
+<form>
+<p>Customer_Name</p>
+<input type="text" id="cname"  placeholder="Customer Name"/>
+<br><br>
+
+<p>Comment</p>
+
+<textarea rows="5" cols="22" type="text" id="comment" placeholder="Comment Here.."></textarea>
+
+<br><br>
+
+<p>Rating</p>
+<select id="ddlViewBy">
+
+ <option class="glyphicon glyphicon-star-empty" value="Good">Good</option>
+  <option value="Average">Average</option>
+  <option value="Excellent">Excellent</option>
+ 
+</select>
+<!-- <div id="ddlViewBy">
+	<a href="">
+		<div value="Good" class="glyphicon glyphicon-star-empty"></div>
+	</a>
+	<div value="Average" class="glyphicon glyphicon-star-empty"></div>
+	<div value="Excellent" class="glyphicon glyphicon-star-empty"></div>
+</div> -->
+<br><br>
+
+
+<button type="button" ng-click="addrating()" class="btn btn-primary">Add comment</button>
+</form>
+
+<br><br>
+</div>
+<div class="col-md-4">
+<img src={{poster}} alt="" height="300px;" width="250px;">
+	
+</div>
+</div>
+
+<div class="row">
+		<div class="col-md-12">
+		
+
+<h1>Show Comments</h1>
+<table class="table table-hover">
+
+ <thead>
+   <tr>
+     <th>Customer Name</th>
+    
+      <th>Rating</th>
+     
+      <th>Views</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr ng-repeat="j in ratingData ">
+   <td>{{j.customername}}</td>
+   <td>{{j.Rating}}</td>
+   <td>{{j.comment}}</td>
+   
+  <!--   <td><button type="button" ng-click="deletemovie()" class="btn btn-danger">Delete</button></td> -->
+</tr>
+ </tbody>
+ </table>
+ </div>
+	</div><br><br>
+	
+	</div>
